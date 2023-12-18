@@ -40,22 +40,22 @@ window.addEventListener('DOMContentLoaded', _ => {
         });
     }
 
-    if (DeviceMotionEvent.requestPermission) {
-        DeviceMotionEvent.requestPermission()
-            .then(permissionState => {
-                if (permissionState === 'granted') {
-                    window.addEventListener("devicemotion", function (event) {
-                        if (event.accelerationIncludingGravity) {
-                            document.getElementById('motionResult').value = event.acceleration.x + ',' + event.acceleration.y + ',' + event.acceleration.z + '\n' +
-                                event.accelerationIncludingGravity.x + ',' + event.accelerationIncludingGravity.y + ',' + event.accelerationIncludingGravity.z + '\n' +
-                                event.rotationRate.alpha + ',' + event.rotationRate.beta + ',' + event.rotationRate.gamma
-                                ;
-                        }
-                    });
-                }
-            })
-            .catch(console.error);
-    }
+    // if (DeviceMotionEvent.requestPermission) {
+    //     DeviceMotionEvent.requestPermission()
+    //         .then(permissionState => {
+    //             if (permissionState === 'granted') {
+    window.addEventListener("devicemotion", function (event) {
+        if (event.accelerationIncludingGravity) {
+            document.getElementById('motionResult').value = event.acceleration.x + ',' + event.acceleration.y + ',' + event.acceleration.z + '\n' +
+                event.accelerationIncludingGravity.x + ',' + event.accelerationIncludingGravity.y + ',' + event.accelerationIncludingGravity.z + '\n' +
+                event.rotationRate.alpha + ',' + event.rotationRate.beta + ',' + event.rotationRate.gamma
+                ;
+        }
+    });
+    //             }
+    //         })
+    //         .catch(console.error);
+    // }
 
     if (window.DeviceOrientationEvent) {
         window.addEventListener(
