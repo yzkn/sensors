@@ -46,9 +46,9 @@ window.addEventListener('DOMContentLoaded', _ => {
     //             if (permissionState === 'granted') {
     window.addEventListener("devicemotion", function (event) {
         if (event.accelerationIncludingGravity) {
-            document.getElementById('motionResult').value = event.acceleration.x + ',' + event.acceleration.y + ',' + event.acceleration.z + '\n' +
-                event.accelerationIncludingGravity.x + ',' + event.accelerationIncludingGravity.y + ',' + event.accelerationIncludingGravity.z + '\n' +
-                event.rotationRate.alpha + ',' + event.rotationRate.beta + ',' + event.rotationRate.gamma
+            document.getElementById('motionResult').value = (event.acceleration.x ? event.acceleration.x : '') + ' ' + (event.acceleration.y ? event.acceleration.y : '') + ' ' + (event.acceleration.z ? event.acceleration.z : '') + '\n' +
+                (event.accelerationIncludingGravity.x ? event.accelerationIncludingGravity.x : '') + ' ' + (event.accelerationIncludingGravity.y ? event.accelerationIncludingGravity.y : '') + ' ' + (event.accelerationIncludingGravity.z ? event.accelerationIncludingGravity.z : '') + '\n' +
+                (event.rotationRate.alpha ? event.rotationRate.alpha : '') + ' ' + (event.rotationRate.beta ? event.rotationRate.beta : '') + ' ' + (event.rotationRate.gamma ? event.rotationRate.gamma : '')
                 ;
         }
     });
@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', _ => {
                 // gamma: left to right          var leftToRight = event.gamma;
                 // beta: front back motion       var frontToBack = event.beta;
 
-                document.getElementById('orientationResult').value = event.alpha + ',' + event.gamma + ',' + event.beta;
+                document.getElementById('orientationResult').value = (event.alpha ? event.alpha : '') + ' ' + (event.gamma ? event.gamma : '') + ' ' + (event.beta ? event.beta : '');
             },
             true,
         );
