@@ -39,7 +39,7 @@
                 <div id="collapsePlayingGps" class="accordion-collapse collapse show"
                     aria-labelledby="headingPlayingGps" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <div class="row mt-5">
+                        <div class="row">
                             <div class="col-8">
                                 <div id="map"></div>
                             </div>
@@ -55,6 +55,53 @@
                     </div>
                 </div>
             </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseBle" aria-expanded="false" aria-controls="collapseBle">
+                        Web Bluetooth
+                    </button>
+                </h2>
+                <div id="collapseBle" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <button type="button" class="btn btn-primary" id="requestBle">Request</button>
+                            </div>
+                            <div class="col-4">
+                                <textarea class="form-control" id="bleResult" name="bleResult" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseVibration" aria-expanded="false" aria-controls="collapseVibration">
+                        Vibration
+                    </button>
+                </h2>
+                <div id="collapseVibration" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-8 d-flex align-items-end">
+                                <label for="vibrateDuration" class="form-label">Duration (millisecond)</label>
+                                <input type="text" class="form-control" id="vibrateDuration" name="vibrateDuration"
+                                    pattern="^([0-9]+)(,[0-9]+)*$" value="1000" />
+                            </div>
+                            <div class="col-2 d-flex align-items-end">
+                                <button type="button" class="btn btn-primary" id="vibrate">Vibrate</button>
+                            </div>
+                            <div class="col-2 d-flex align-items-end">
+                                <button type="button" class="btn btn-primary" id="vibrateSos">SOS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 
